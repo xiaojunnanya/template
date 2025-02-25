@@ -1,19 +1,8 @@
 <div align="center">
 
-# 鲸灵开发 低代码平台
+# xxx
 
-使构建更简单，开发更高效
-
-</div>
-
-<div align="center">
-
-![GitHub Repo stars](https://img.shields.io/github/stars/xiaojunnanya/whaledev)
-
-![GitHub package.json version](https://img.shields.io/github/package-json/v/xiaojunnanya/whaledev)
-![GitHub License](https://img.shields.io/github/license/xiaojunnanya/whaledev)
-![language](https://img.shields.io/github/languages/top/xiaojunnanya/whaledev)
-![last](https://img.shields.io/github/last-commit/xiaojunnanya/whaledev.svg)
+xxx
 
 </div>
 
@@ -41,7 +30,6 @@ npm run start:db
 npm run start:front # 前端服务 http://localhost:5173
 npm run start:back # 后端服务 http://localhost:3173
 npm run start:doc # 文档服务 http://localhost:4173
-npm run start:monitor # 文档服务 http://localhost:2173
 npm run start # 同时启动前端、监控、后端和文档
 
 # 初始化Mysql数据库
@@ -55,7 +43,6 @@ npm run start:db
 | packages/frontEnd | 前端项目 |
 | packages/backEnd  | 后端服务 |
 | packages/document | 文档服务 |
-| packages/monitor  | 监控系统 |
 
 ### 快速开始
 
@@ -65,10 +52,6 @@ npm run start:db
 ## Star History
 
 如果你发现此项目对你有所帮助，请考虑在 [GitHub](https://github.com/xiaojunnanya/whaledev) 上给它一个 ⭐️ !
-
-<img alt="Star History Chart" src="https://api.star-history.com/svg?repos=xiaojunnanya/whaledev&type=Date" />
-</picture>
-</a>
 
 ## 许可证
 
