@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum EmailCodeType {
+  register
+  forget
+}
+
+enum ProjectType {
+  reception
+   backstage
+}
+
+enum PageType {
+  custom
+   template
+   flow
+}
+
+enum ProjectState {
+  inProgress
+   completed
+   paused
+   obsolete
+}
+
+// 所有的表都需要有: id, created_time, updated_time, status
+// id 是数据主键
+
+// 所有的名称都要用下划线
+// @unique：唯一
+// @default(dbgenerated("NOW()")) 创建时间
+// @default(dbgenerated("NOW() ON UPDATE NOW()")) 更新时间
+//  @@index: 创建索引提示查询性能
+
+// 不推荐使用物理外键（@relation）
+
+// @relation("page_json_pages"):pages 表和 page_json 表通过 page_json_pages 这个关系名连接起来。
+// fields 指定了当前模型（在此是 pages）中外键的字段
+// references 指定了在目标模型（在此是 page_json）中的字段，这个字段是外键引用的目标
+
+
+// 用户表
+model user {
+  id Int @id @default(autoincrement())
+  created_time DateTime @default(dbgenerated("NOW()")) @db.DateTime
+  updated_time DateTime @default(dbgenerated("NOW() ON UPDATE NOW()")) @db.DateTime
+  status Int @default(0) // 0:正常 1:封禁
+
+  user_id String @unique
+
+  email String @unique
+  password String
+  username String? @default("鲸灵开发用户")
+  avatar String? @default("/avatar/default-avatar.jpg")
+
+  @@index([email])
+}

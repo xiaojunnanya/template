@@ -1,0 +1,34 @@
+{
+  "name": "whaledev",
+  "version": "1.0.0",
+  "description": "鲸灵开发",
+  "scripts": {
+    "push": "github.sh",
+    "create": "npm --prefix ./packages/backEnd run create",
+    "start:front": "npm --prefix ./packages/frontEnd run dev",
+    "build:front": "npm --prefix ./packages/frontEnd run build",
+    "start:monitor": "npm --prefix ./packages/monitor run dev",
+    "build:monitor": "npm --prefix ./packages/monitor run build",
+    "start:back": "npm --prefix ./packages/backEnd run start:dev",
+    "build:back": "npm --prefix ./packages/backEnd run build",
+    "start:doc": "npm --prefix ./packages/document run docs:dev",
+    "build:doc": "npm --prefix ./packages/document run docs:build",
+    "start": "concurrently -n \"front,monitor,back,docs\" -c \"magenta,blue,cyan,black\" \"npm run start:front\" \"npm run start:monitor\" \"npm run start:back\" \"npm run start:doc\"",
+    "build": "concurrently -n \"front,monitor,back,docs\" -c \"magenta,blue,cyan,black\" \"npm run build:front\" \"npm run build:monitor\" \"npm run build:back\" \"npm run build:doc\"",
+    "start:db": "npm --prefix ./packages/backEnd run mysql:init"
+  },
+  "author": "鲸落",
+  "license": "ISC",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "concurrently": "^9.0.1",
+    "husky": "^9.1.6",
+    "lerna": "^8.1.8",
+    "axios": "^1.7.9",
+    "@types/node": "^20.3.1"
+  }
+}
